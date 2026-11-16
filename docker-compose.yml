@@ -1,0 +1,9 @@
+services:
+  discord-notifier:
+    build: .
+    container_name: discord-notifier
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./credentials.json:/app/credentials.json:ro
+      - ./token.json:/app/token.json
